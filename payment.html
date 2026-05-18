@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Оплата — ХАЙПЕР</title>
+  <meta name="description" content="Оплата ХАЙПЕР: полная сумма или частичная оплата после договорённости в Telegram." />
+
+  <link rel="icon" href="./assets/favicon.ico" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <a href="./index.html" class="logo">ХАЙПЕР<span></span></a>
+
+    <nav class="nav">
+      <a href="./index.html">Главная</a>
+      <a href="./index.html#courses">Курсы</a>
+      <a href="./index.html#form">Анкета</a>
+    </nav>
+
+    <a href="./index.html#form" class="header-cta">Заполнить анкету</a>
+  </header>
+
+  <main class="payment-page">
+    <section class="payment-hero section-pad">
+      <div>
+        <div class="tag tag-dark">Оплата</div>
+        <h1>Выберите формат оплаты</h1>
+        <p>
+          Можно оплатить программу полностью или внести согласованный первый платёж.
+          График частичной оплаты обсуждается лично в Telegram.
+        </p>
+      </div>
+    </section>
+
+    <section class="checkout section-pad">
+      <div class="checkout-main">
+        <div class="payment-switch" aria-label="Выбор формата оплаты">
+          <button class="switch-btn active" type="button" data-mode="full">Полная оплата</button>
+          <button class="switch-btn" type="button" data-mode="split">Оплата частями</button>
+        </div>
+
+        <form class="checkout-card" id="paymentForm">
+          <div class="payment-mode-panel active" id="fullPanel">
+            <h2>Полная оплата</h2>
+
+            <div class="full-payment">
+              <div class="price-big">29 900 ₽</div>
+              <div class="full-info">
+                Полный доступ к программе, roadmap и Telegram-поддержке.
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-mode-panel" id="splitPanel">
+            <h2>Оплата частями</h2>
+
+            <div class="split-info">
+              Введите согласованную сумму первого платежа. После оплаты мы связываемся
+              с вами в Telegram и подтверждаем дальнейший график.
+            </div>
+
+            <div class="payment-fields split-fields">
+              <div class="field">
+                <label for="customAmount">Сумма первого платежа, ₽</label>
+                <input
+                  id="customAmount"
+                  name="customAmount"
+                  type="number"
+                  min="1000"
+                  step="100"
+                  placeholder="Например: 5000"
+                />
+              </div>
+
+              <div class="field">
+                <label for="telegram">Ваш Telegram</label>
+                <input
+                  id="telegram"
+                  name="telegram"
+                  type="text"
+                  placeholder="@username"
+                />
+              </div>
+
+              <div class="field field-full">
+                <label for="comment">Комментарий к оплате</label>
+                <textarea
+                  id="comment"
+                  name="comment"
+                  placeholder="Например: первый платёж за Telegram Growth"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h2>Данные для чека</h2>
+
+          <div class="payment-fields buyer-fields">
+            <div class="field">
+              <label for="buyerName">Имя</label>
+              <input
+                id="buyerName"
+                name="buyerName"
+                type="text"
+                placeholder="Ваше имя"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="buyerEmail">Email для чека</label>
+              <input
+                id="buyerEmail"
+                name="buyerEmail"
+                type="email"
+                placeholder="email@example.com"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="buyerPhone">Телефон</label>
+              <input
+                id="buyerPhone"
+                name="buyerPhone"
+                type="tel"
+                placeholder="+7..."
+              />
+            </div>
+          </div>
+
+          <h2 class="payment-method-title">Способ оплаты</h2>
+
+          <div class="payment-methods">
+            <label class="method active">
+              <input type="radio" name="payment" checked />
+              <span>СБП</span>
+              <small>QR / приложение банка</small>
+            </label>
+
+            <label class="method">
+              <input type="radio" name="payment" />
+              <span>Банковская карта</span>
+              <small>МИР / карта банка</small>
+            </label>
+
+            <label class="method">
+              <input type="radio" name="payment" />
+              <span>SberPay</span>
+              <small>Оплата через Сбер</small>
+            </label>
+
+            <label class="method">
+              <input type="radio" name="payment" />
+              <span>T-Pay</span>
+              <small>Оплата через Т-Банк</small>
+            </label>
+
+            <label class="method">
+              <input type="radio" name="payment" />
+              <span>Mir Pay</span>
+              <small>Оплата через Mir Pay</small>
+            </label>
+          </div>
+
+          <button class="pay-button" type="submit" id="payButton">
+            Оплатить 29 900 ₽
+          </button>
+
+          <p class="payment-note">
+            Сейчас кнопка подготовлена под подключение платёжного провайдера.
+            После интеграции она будет вести на реальную оплату и формирование чека.
+          </p>
+        </form>
+      </div>
+
+      <aside class="receipt-card">
+        <div class="receipt-top">
+          <span>Чек оплаты</span>
+          <strong>HYPER-001</strong>
+        </div>
+
+        <div class="receipt-line">
+          <span>Программа</span>
+          <strong>Telegram Growth PRO</strong>
+        </div>
+
+        <div class="receipt-line">
+          <span>Формат оплаты</span>
+          <strong id="receiptMode">Полная оплата</strong>
+        </div>
+
+        <div class="receipt-line">
+          <span>Полная стоимость</span>
+          <strong>29 900 ₽</strong>
+        </div>
+
+        <div class="receipt-line">
+          <span>К оплате сейчас</span>
+          <strong id="receiptAmount">29 900 ₽</strong>
+        </div>
+
+        <div class="receipt-line">
+          <span>Остаток</span>
+          <strong id="receiptRest">0 ₽</strong>
+        </div>
+
+        <div class="receipt-total">
+          <span>Итого</span>
+          <strong id="receiptTotal">29 900 ₽</strong>
+        </div>
+
+        <div class="receipt-status">
+          <span></span>
+          Чек будет отправлен на указанный email
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    const FULL_PRICE = 29900;
+
+    const switchButtons = document.querySelectorAll(".switch-btn");
+    const fullPanel = document.getElementById("fullPanel");
+    const splitPanel = document.getElementById("splitPanel");
+    const customAmountInput = document.getElementById("customAmount");
+    const telegramInput = document.getElementById("telegram");
+    const payButton = document.getElementById("payButton");
+
+    const receiptMode = document.getElementById("receiptMode");
+    const receiptAmount = document.getElementById("receiptAmount");
+    const receiptRest = document.getElementById("receiptRest");
+    const receiptTotal = document.getElementById("receiptTotal");
+
+    let currentMode = "full";
+
+    function formatRub(value) {
+      return new Intl.NumberFormat("ru-RU").format(value) + " ₽";
+    }
+
+    function getSplitAmount() {
+      const value = Number(customAmountInput.value);
+      if (!value || value < 0) return 0;
+      return Math.min(value, FULL_PRICE);
+    }
+
+    function updateReceipt() {
+      if (currentMode === "full") {
+        receiptMode.textContent = "Полная оплата";
+        receiptAmount.textContent = formatRub(FULL_PRICE);
+        receiptRest.textContent = "0 ₽";
+        receiptTotal.textContent = formatRub(FULL_PRICE);
+        payButton.textContent = "Оплатить " + formatRub(FULL_PRICE);
+        return;
+      }
+
+      const splitAmount = getSplitAmount();
+      const rest = Math.max(FULL_PRICE - splitAmount, 0);
+
+      receiptMode.textContent = "Оплата частями";
+      receiptAmount.textContent = splitAmount ? formatRub(splitAmount) : "Введите сумму";
+      receiptRest.textContent = splitAmount ? formatRub(rest) : "Согласуется в Telegram";
+      receiptTotal.textContent = splitAmount ? formatRub(splitAmount) : "Введите сумму";
+      payButton.textContent = splitAmount ? "Оплатить " + formatRub(splitAmount) : "Введите сумму оплаты";
+    }
+
+    switchButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        currentMode = button.dataset.mode;
+
+        switchButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        fullPanel.classList.toggle("active", currentMode === "full");
+        splitPanel.classList.toggle("active", currentMode === "split");
+
+        updateReceipt();
+      });
+    });
+
+    customAmountInput.addEventListener("input", updateReceipt);
+
+    document.querySelectorAll(".method").forEach((method) => {
+      method.addEventListener("click", () => {
+        document.querySelectorAll(".method").forEach((item) => item.classList.remove("active"));
+        method.classList.add("active");
+      });
+    });
+
+    document.getElementById("paymentForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (currentMode === "split") {
+        const splitAmount = getSplitAmount();
+        if (!splitAmount || splitAmount < 1000) {
+          alert("Введите сумму первого платежа от 1 000 ₽.");
+          customAmountInput.focus();
+          return;
+        }
+
+        if (!telegramInput.value.trim()) {
+          alert("Введите Telegram для связи по рассрочке.");
+          telegramInput.focus();
+          return;
+        }
+      }
+
+      alert("Дальше здесь подключается платёжный провайдер: ЮKassa / CloudPayments / Т-Банк.");
+    });
+
+    updateReceipt();
+  </script>
+</body>
+</html>
