@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Оплата — ХАЙПЕР</title>
+  <meta name="description" content="Оплата ХАЙПЕР: полная сумма или ручная рассрочка через Telegram." />
+
+  <link rel="icon" href="./assets/favicon.ico" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <a href="./index.html" class="logo">ХАЙПЕР<span></span></a>
+
+    <nav class="nav">
+      <a href="./index.html">Главная</a>
+      <a href="./index.html#courses">Курсы</a>
+      <a href="./index.html#form">Анкета</a>
+    </nav>
+
+    <a href="./index.html#form" class="header-cta">Заполнить анкету</a>
+  </header>
+
+  <main class="payment-page">
+    <section class="payment-hero section-pad">
+      <div>
+        <div class="tag tag-dark">Оплата</div>
+        <h1>Выберите формат оплаты</h1>
+        <p>Можно оплатить программу полностью или внести комфортный первый платёж после договорённости в Telegram.</p>
+      </div>
+    </section>
+
+    <section class="checkout section-pad">
+      <div class="checkout-main">
+        <div class="payment-switch">
+          <button class="switch-btn active">Полная оплата</button>
+          <button class="switch-btn">Оплата частями</button>
+        </div>
+
+        <div class="checkout-card">
+          <h2>Полная оплата</h2>
+
+          <div class="full-payment">
+            <div class="price-big">29 900 ₽</div>
+            <div class="full-info">Полный доступ к программе, roadmap и Telegram-поддержке.</div>
+            <button class="pay-button">Оплатить полностью</button>
+          </div>
+
+          <div class="divider"></div>
+
+          <h2>Оплата частями</h2>
+
+          <div class="split-info">
+            После первого платежа мы связываемся с вами в Telegram и согласуем дальнейший график оплаты.
+          </div>
+
+          <div class="payment-fields split-fields">
+            <div class="field">
+              <label>Сумма первого платежа</label>
+              <input type="number" placeholder="Например: 5000" />
+            </div>
+
+            <div class="field">
+              <label>Ваш Telegram</label>
+              <input type="text" placeholder="@username" />
+            </div>
+
+            <div class="field field-full">
+              <label>Комментарий</label>
+              <textarea placeholder="Например: первый платеж за Telegram Growth"></textarea>
+            </div>
+          </div>
+
+          <div class="payment-methods">
+            <label class="method active">
+              <input type="radio" name="payment" checked />
+              <span>СБП</span>
+              <small>QR / приложение банка</small>
+            </label>
+
+            <label class="method">
+              <input type="radio" name="payment" />
+              <span>SberPay</span>
+              <small>Оплата через Сбер</small>
+            </label>
+
+            <label class="method">
+              <input type="radio" name="payment" />
+              <span>T-Pay</span>
+              <small>Оплата через Т-Банк</small>
+            </label>
+
+            <label class="method">
+              <input type="radio" name="payment" />
+              <span>Mir Pay</span>
+              <small>Оплата через Mir Pay</small>
+            </label>
+          </div>
+
+          <button class="pay-button split-btn-main">Оплатить выбранную сумму</button>
+        </div>
+      </div>
+
+      <aside class="receipt-card">
+        <div class="receipt-top">
+          <span>Чек оплаты</span>
+          <strong>HYPER-001</strong>
+        </div>
+
+        <div class="receipt-line">
+          <span>Программа</span>
+          <strong>Telegram Growth PRO</strong>
+        </div>
+
+        <div class="receipt-line">
+          <span>Полная стоимость</span>
+          <strong>29 900 ₽</strong>
+        </div>
+
+        <div class="receipt-line">
+          <span>Первый платеж</span>
+          <strong>вводится клиентом</strong>
+        </div>
+
+        <div class="receipt-line">
+          <span>Формат</span>
+          <strong>полная / частичная оплата</strong>
+        </div>
+
+        <div class="receipt-total">
+          <span>Статус</span>
+          <strong>Ожидает оплаты</strong>
+        </div>
+
+        <div class="receipt-status">
+          <span></span>
+          После оплаты чек отправляется на email
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
